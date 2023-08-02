@@ -80,6 +80,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 li {
@@ -146,6 +147,20 @@ body {
   padding-inline: 15px;
 }
 
+#mqlogo {
+  margin: auto;
+  display: none;
+}
+
+#logo {
+  width: 5%;
+}
+
+#logotext {
+
+  margin: 0;
+}
+
 button,
 a {
   transition: var(--transition);
@@ -173,7 +188,7 @@ a {
   font-weight: var(--font-weight, 700);
 }
 
-.h3 > a {
+.h3>a {
   color: Black;
 }
 
@@ -263,7 +278,7 @@ a {
   scroll-snap-type: inline mandatory;
 }
 
-.has-scrollbar > li {
+.has-scrollbar>li {
   min-width: 100%;
   scroll-snap-align: start;
 }
@@ -531,7 +546,7 @@ a {
   margin-bottom: 40px;
 }
 
-.about-banner > img {
+.about-banner>img {
   max-width: max-content;
   width: 100%;
 }
@@ -562,6 +577,10 @@ a {
 
 .about-list {
   margin-bottom: 30px;
+}
+
+.about-list p {
+  margin: 0;
 }
 
 .about-item {
@@ -641,7 +660,7 @@ a {
   margin-bottom: 15px;
 }
 
-.service-card .card-title > a:is(:hover, :focus) {
+.service-card .card-title>a:is(:hover, :focus) {
   color: var(--orange-soda);
 }
 
@@ -779,7 +798,7 @@ a {
   margin-bottom: 15px;
 }
 
-.property-card .card-title > a:is(:hover, :focus) {
+.property-card .card-title>a:is(:hover, :focus) {
   color: var(--orange-soda);
 }
 
@@ -844,7 +863,7 @@ a {
   border-radius: 50%;
 }
 
-.author-name > a {
+.author-name>a {
   color: var(--black);
   font-family: var(--ff-poppins);
   font-size: var(--fs-5);
@@ -852,7 +871,7 @@ a {
   margin-bottom: 3px;
 }
 
-.author-name > a:is(:hover, :focus) {
+.author-name>a:is(:hover, :focus) {
   color: var(--white);
 }
 
@@ -898,7 +917,7 @@ a {
   gap: 50px 20px;
 }
 
-.features-list > li {
+.features-list>li {
   width: calc(50% - 10px);
 }
 
@@ -921,8 +940,8 @@ a {
 }
 
 .features-card .card-icon {
-  background: var(--seashell);
-  color: var(--orange-soda);
+  background: var(--orange-soda);
+  color: var(--black);
   width: 60px;
   height: 60px;
   display: grid;
@@ -979,6 +998,7 @@ a {
   color: var(--orange-soda);
   rotate: 360deg;
 }
+
 /*-----------------------------------*\
     #BLOG
   \*-----------------------------------*/
@@ -1176,18 +1196,22 @@ a {
   color: var(--orange-soda);
 }
 
+.contact-form {
+  background-color: #000;
+}
+
 .social-list {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.social{
+.social {
   color: white;
   transition: .5s;
 }
 
-.social:hover{
+.social:hover {
   rotate: 360deg;
   font-size: large;
   color: #daa520;
@@ -1269,7 +1293,7 @@ a {
     scroll-padding-left: 25px;
   }
 
-  .has-scrollbar > li {
+  .has-scrollbar>li {
     min-width: calc(50% - 12.5px);
   }
 
@@ -1277,7 +1301,7 @@ a {
      * SERVICE
      */
 
-  .service-list > li {
+  .service-list>li {
     width: calc(50% - 15px);
   }
 
@@ -1374,8 +1398,10 @@ a {
 
   .header-bottom .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 2%;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .header-bottom-actions-btn ion-icon {
@@ -1401,6 +1427,14 @@ a {
     max-width: 400px;
   }
 
+  /* 
+  .hero-banner{
+    width: 100%;
+    height: 100%;
+    background: url(download.jpg) no-repeat;
+    background-size: cover;
+  } */
+
   /**
      * ABOUT
      */
@@ -1422,7 +1456,7 @@ a {
      * FEATURES
      */
 
-  .features-list > li {
+  .features-list>li {
     width: calc(33.33% - 13.33px);
   }
 
@@ -1542,7 +1576,7 @@ a {
     margin-bottom: 0;
   }
 
-  .about-banner > img {
+  .about-banner>img {
     width: 100%;
   }
 
@@ -1550,7 +1584,7 @@ a {
      * SERVICE
      */
 
-  .service-list > li {
+  .service-list>li {
     width: calc(33.33% - 20px);
   }
 
@@ -1574,7 +1608,7 @@ a {
     column-gap: 30px;
   }
 
-  .features-list > li {
+  .features-list>li {
     width: calc(25% - 30px);
   }
 
@@ -1649,7 +1683,7 @@ a {
     max-width: 1200px;
   }
 
-  .has-scrollbar > li {
+  .has-scrollbar>li {
     min-width: calc(33.33% - 16.66px);
   }
 
@@ -1707,6 +1741,7 @@ a {
     0% {
       transform: translateY(0);
     }
+
     100% {
       transform: translateY(100%);
     }
@@ -1755,5 +1790,15 @@ a {
 
   .footer-link-box {
     flex-basis: 700px;
+  }
+}
+
+@media (max-width: 767px) {
+  #logo {
+    display: none;
+  }
+
+  #mqlogo {
+    display: block;
   }
 }
