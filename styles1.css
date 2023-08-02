@@ -121,7 +121,7 @@ html {
 }
 
 body {
-  background: var(--white);
+  background: var(--black);
   overflow-x: hidden;
 }
 
